@@ -1,0 +1,58 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Uçak Bileti Rezervasyon Sistemi API",
+    "version": "1.0.0",
+    "description": "MYK Seviye 5 Uyumlu Uçak Bileti Rezervasyon Sistemi API dokümantasyonu. Tüm endpointler ve parametreler Türkçe açıklamalı."
+  },
+  "paths": {
+    "/api/flights": {
+      "get": {
+        "summary": "Uçuşları listele",
+        "parameters": [
+          {"name": "from", "in": "query", "description": "Kalkış noktası", "schema": {"type": "string"}},
+          {"name": "to", "in": "query", "description": "Varış noktası", "schema": {"type": "string"}},
+          {"name": "departureDate", "in": "query", "description": "Kalkış tarihi (YYYY-MM-DD)", "schema": {"type": "string"}},
+          {"name": "class", "in": "query", "description": "Uçuş sınıfı (Ekonomi/Business)", "schema": {"type": "string"}},
+          {"name": "maxPrice", "in": "query", "description": "Maksimum fiyat", "schema": {"type": "integer"}}
+        ],
+        "responses": {"200": {"description": "Uçuş listesi"}}
+      }
+    },
+    "/api/flights/cheapest": {
+      "get": {
+        "summary": "En uygun uçuşu getir",
+        "parameters": [
+          {"name": "from", "in": "query", "description": "Kalkış noktası", "schema": {"type": "string"}},
+          {"name": "to", "in": "query", "description": "Varış noktası", "schema": {"type": "string"}},
+          {"name": "departureDate", "in": "query", "description": "Kalkış tarihi (YYYY-MM-DD)", "schema": {"type": "string"}},
+          {"name": "class", "in": "query", "description": "Uçuş sınıfı (Ekonomi/Business)", "schema": {"type": "string"}},
+          {"name": "maxPrice", "in": "query", "description": "Maksimum fiyat", "schema": {"type": "integer"}}
+        ],
+        "responses": {"200": {"description": "En uygun uçuş"}, "404": {"description": "Uygun uçuş bulunamadı"}}
+      }
+    },
+    "/api/bookings": {
+      "post": {
+        "summary": "Rezervasyon oluştur",
+        "requestBody": {
+          "required": true,
+          "content": {"application/json": {"schema": {"type": "object", "properties": {"flightId": {"type": "integer"}, "name": {"type": "string"}, "email": {"type": "string"}, "seats": {"type": "integer"}}}}}
+        },
+        "responses": {"201": {"description": "Rezervasyon oluşturuldu"}, "400": {"description": "Eksik bilgi veya koltuk yok"}}
+      }
+    },
+    "/api/bookings/{id}": {
+      "get": {
+        "summary": "Rezervasyon görüntüle",
+        "parameters": [{"name": "id", "in": "path", "required": true, "description": "Rezervasyon ID", "schema": {"type": "string"}}],
+        "responses": {"200": {"description": "Rezervasyon bilgisi"}, "404": {"description": "Rezervasyon bulunamadı"}}
+      },
+      "delete": {
+        "summary": "Rezervasyon iptal et",
+        "parameters": [{"name": "id", "in": "path", "required": true, "description": "Rezervasyon ID", "schema": {"type": "string"}}],
+        "responses": {"200": {"description": "Rezervasyon iptal edildi"}, "404": {"description": "Rezervasyon bulunamadı"}}
+      }
+    }
+  }
+}
