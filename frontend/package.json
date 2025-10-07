@@ -1,0 +1,20 @@
+{
+  "name": "myk-ucak-bileti-frontend",
+  "version": "1.0.0",
+  "description": "MYK Seviye 5 Uçak Bileti Rezervasyon Sistemi Frontend",
+  "main": "src/App.jsx",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "author": "MYK Proje",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "vite": "^4.5.0"
+  }
+}

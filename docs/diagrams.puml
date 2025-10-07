@@ -1,0 +1,37 @@
+@startuml
+' Use Case Diyagramı
+left to right direction
+actor Kullanıcı
+rectangle Sistem {
+  Kullanıcı --> (Uçuş Arama)
+  Kullanıcı --> (En Uygun Uçuşu Görüntüleme)
+  Kullanıcı --> (Rezervasyon Yapma)
+  Kullanıcı --> (Rezervasyon Görüntüleme)
+  Kullanıcı --> (Rezervasyon İptali)
+}
+@enduml
+
+' Sınıf Diyagramı
+@startuml
+class Flight {
+  +flightId: number
+  +airline: string
+  +from: string
+  +to: string
+  +departure: string
+  +arrival: string
+  +durationMinutes: number
+  +stops: number
+  +price: number
+  +class: string
+  +remainingSeats: number
+}
+class Booking {
+  +bookingId: string
+  +flightId: number
+  +name: string
+  +email: string
+  +seats: number
+}
+Flight "1" -- "*" Booking
+@enduml
