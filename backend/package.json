@@ -4,9 +4,11 @@
   "description": "MYK Seviye 5 Uçak Bileti Rezervasyon Sistemi Backend",
   "main": "src/app.js",
   "scripts": {
-    "start": "node src/app.js",
-    "dev": "nodemon src/app.js",
-    "test": "jest"
+    "start": "vite",
+   "dev": "vite",
+   "build": "vite build",
+   "predeploy": "npm run build",
+   "deploy": "gh-pages -d dist"
   },
   "author": "MYK Proje",
   "license": "MIT",

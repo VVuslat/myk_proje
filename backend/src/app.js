@@ -39,3 +39,12 @@ app.listen(PORT, () => {
 });
 
 module.exports = app;
+
+// package.json ayarları
+{
+  "homepage": "https://<kullanıcı-adı>.github.io/<repo-adı>/",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  }
+}
