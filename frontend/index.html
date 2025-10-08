@@ -1,12 +1,89 @@
-<!DOCTYPE html>
+git add frontend/src/services/api.js
+git commit -m "api.js güncellendi: Türkçe JSDoc ve fonksiyonlar eklendi"
+git push origin teslimat<!DOCTYPE html>
 <html lang="tr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MYK Uçak Bileti Rezervasyon Sistemi</title>
+    <meta name="description" content="MYK Seviye 5 Uçak Bileti Rezervasyon Sistemi - Uçuş arama ve rezervasyon arayüzü." />
+    <link rel="icon" href="favicon.ico" />
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: #f6f8fa;
+        color: #222;
+      }
+      header {
+        background: #1976d2;
+        color: #fff;
+        padding: 1rem 0;
+        text-align: center;
+        font-size: 1.7rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+        box-shadow: 0 2px 8px #0001;
+      }
+      main {
+        max-width: 700px;
+        margin: 2rem auto;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 16px #0002;
+        padding: 2rem;
+      }
+      footer {
+        text-align: center;
+        color: #888;
+        font-size: 0.95rem;
+        margin: 2rem 0 1rem 0;
+      }
+      .badge {
+        display: inline-block;
+        background: #43a047;
+        color: #fff;
+        border-radius: 6px;
+        padding: 0.2em 0.7em;
+        font-size: 0.95em;
+        margin-left: 0.5em;
+        font-weight: bold;
+      }
+      @media (max-width: 800px) {
+        main { margin: 1rem; padding: 1rem; }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
-    <!-- React uygulaması buraya render edilir -->
+    <header>
+      MYK Uçak Bileti Rezervasyon Sistemi
+    </header>
+    <main>
+      <noscript>
+        <div style="color: #c00; font-weight: bold; margin-bottom: 1em;">
+          Bu uygulamayı çalıştırmak için JavaScript etkin olmalıdır.
+        </div>
+      </noscript>
+      <div id="root">
+        <!-- React uygulaması buraya render edilir -->
+        <section>
+          <h2>Uçuş Arama ve Rezervasyon</h2>
+          <p>
+            <strong>Arama formu, uçuş listesi ve rezervasyon işlemleri React uygulaması ile burada görüntülenecektir.</strong>
+          </p>
+          <ul>
+            <li>Uçuş araması yapabilir, filtreleyebilir ve en uygun uçuşu görebilirsiniz.</li>
+            <li>Rezervasyon işlemleri ve koltuk durumu anlık olarak güncellenir.</li>
+            <li>Arayüz mobil uyumludur ve erişilebilirlik standartlarına uygundur.</li>
+            <li>Gerçek uçuş verisi kullanılmaz, tüm veriler mock API ile sağlanır.</li>
+          </ul>
+          <div class="badge">EN UYGUN</div>
+        </section>
+      </div>
+    </main>
+    <footer>
+      &copy; 2025 MYK Proje | Tüm hakları saklıdır.
+    </footer>
+    <!-- Vite/React build çıktısı otomatik olarak JS dosyalarını ekler -->
   </body>
 </html>
